@@ -1,5 +1,14 @@
 import { ServiceItem, ReviewItem, GalleryItem } from '../types';
 
+import heroImg from '../assets/images/hero_salon_interior_1787564672751.jpg';
+import aboutImg from '../assets/images/about_salon_interior_1787564692592.jpg';
+import precisionHairImg from '../assets/images/salon_precision_hair_1787564711709.jpg';
+import vipGroomingImg from '../assets/images/salon_vip_grooming_1787564728962.jpg';
+import receptionLoungeImg from '../assets/images/salon_reception_lounge_1787564804606.jpg';
+import stylingStationImg from '../assets/images/salon_styling_station_1787564830341.jpg';
+import beardShaveImg from '../assets/images/salon_beard_shave_1787565380064.jpg';
+import hairColorImg from '../assets/images/salon_hair_color_1787565396135.jpg';
+
 export const BUSINESS_INFO = {
   name: 'Flying Scissor',
   tagline: 'Where Style Meets Precision',
@@ -36,12 +45,14 @@ export const BUSINESS_INFO = {
 };
 
 export const SALON_IMAGES = {
-  hero: '/src/assets/images/hero_salon_interior_1787564672751.jpg',
-  about: '/src/assets/images/about_salon_interior_1787564692592.jpg',
-  precisionHair: '/src/assets/images/salon_precision_hair_1787564711709.jpg',
-  vipGrooming: '/src/assets/images/salon_vip_grooming_1787564728962.jpg',
-  receptionLounge: '/src/assets/images/salon_reception_lounge_1787564804606.jpg',
-  stylingStation: '/src/assets/images/salon_styling_station_1787564830341.jpg'
+  hero: heroImg,
+  about: aboutImg,
+  precisionHair: precisionHairImg,
+  vipGrooming: vipGroomingImg,
+  receptionLounge: receptionLoungeImg,
+  stylingStation: stylingStationImg,
+  beardShave: beardShaveImg,
+  hairColor: hairColorImg
 };
 
 export const SERVICES_LIST: ServiceItem[] = [
@@ -57,7 +68,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Precision scissor & clipper craft',
       'Signature blow-dry & matte or shine finish'
     ],
-    iconName: 'Scissors'
+    iconName: 'Scissors',
+    imageUrl: precisionHairImg
   },
   {
     id: 'hair-styling',
@@ -71,7 +83,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Long hair sculpted blowouts',
       'Premium hair hold & heat protectants'
     ],
-    iconName: 'Sparkles'
+    iconName: 'Sparkles',
+    imageUrl: stylingStationImg
   },
   {
     id: 'hair-color',
@@ -85,7 +98,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Beard & mustache tinting',
       'Ammonia-free nourishing formulas'
     ],
-    iconName: 'Palette'
+    iconName: 'Palette',
+    imageUrl: hairColorImg
   },
   {
     id: 'hair-treatment',
@@ -99,7 +113,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Scalp detox & anti-dandruff treatment',
       'Hot oil & nutrient moisture masks'
     ],
-    iconName: 'ShieldCheck'
+    iconName: 'ShieldCheck',
+    imageUrl: vipGroomingImg
   },
   {
     id: 'beard-grooming',
@@ -113,7 +128,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Beard tapering, fade & shape sculpting',
       'Organic beard oil & aftershave balm'
     ],
-    iconName: 'UserCheck'
+    iconName: 'UserCheck',
+    imageUrl: beardShaveImg
   },
   {
     id: 'special-occasion',
@@ -127,7 +143,8 @@ export const SERVICES_LIST: ServiceItem[] = [
       'Complete look coordination',
       'Express VIP express appointments'
     ],
-    iconName: 'Crown'
+    iconName: 'Crown',
+    imageUrl: heroImg
   }
 ];
 
@@ -159,7 +176,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-1',
     title: 'Grand Salon Floor & Styling Stations',
     category: 'interior',
-    imageUrl: SALON_IMAGES.hero,
+    imageUrl: heroImg,
     aspect: 'landscape',
     caption: 'Illuminated halo mirrors, dark walnut stations, and pristine marble finish.'
   },
@@ -167,7 +184,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-2',
     title: 'Styling Lounge & Hydraulic Stations',
     category: 'interior',
-    imageUrl: SALON_IMAGES.about,
+    imageUrl: aboutImg,
     aspect: 'landscape',
     caption: 'Modern luxury setting equipped with premium leather seating.'
   },
@@ -175,7 +192,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-3',
     title: 'Master Scissor & Styling Craft',
     category: 'styling',
-    imageUrl: SALON_IMAGES.precisionHair,
+    imageUrl: precisionHairImg,
     aspect: 'square',
     caption: 'Tailored precision shear work for every client profile.'
   },
@@ -183,23 +200,39 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-4',
     title: 'VIP Hair Spa & Treatment Suite',
     category: 'experience',
-    imageUrl: SALON_IMAGES.vipGrooming,
+    imageUrl: vipGroomingImg,
     aspect: 'landscape',
     caption: 'Ergonomic reclining wash chairs and restorative hair therapies.'
   },
   {
     id: 'gal-5',
+    title: 'Beard Grooming & Straight Razor Precision',
+    category: 'grooming',
+    imageUrl: beardShaveImg,
+    aspect: 'landscape',
+    caption: 'Master straight razor styling, beard shaping, and hot towel relaxation.'
+  },
+  {
+    id: 'gal-6',
+    title: 'Dimensional Hair Color & Balayage Suite',
+    category: 'styling',
+    imageUrl: hairColorImg,
+    aspect: 'landscape',
+    caption: 'Rich tone-on-tone coloring, grey coverage, and modern hair color transformations.'
+  },
+  {
+    id: 'gal-7',
     title: 'Welcoming Guest Reception Lounge',
     category: 'experience',
-    imageUrl: SALON_IMAGES.receptionLounge,
+    imageUrl: receptionLoungeImg,
     aspect: 'landscape',
     caption: 'Warm ambient illumination and comfortable guest reception.'
   },
   {
-    id: 'gal-6',
+    id: 'gal-8',
     title: 'Dedicated Detail Vanity Suite',
-    category: 'grooming',
-    imageUrl: SALON_IMAGES.stylingStation,
+    category: 'interior',
+    imageUrl: stylingStationImg,
     aspect: 'square',
     caption: 'Sanitized professional tools and warm ambient golden lighting.'
   }

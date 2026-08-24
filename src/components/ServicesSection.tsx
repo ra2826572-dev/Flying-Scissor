@@ -63,51 +63,76 @@ export default function ServicesSection({ onOpenBooking }: ServicesSectionProps)
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-14">
-          {SERVICES_LIST.map((service, index) => (
+          {SERVICES_LIST.map((service) => (
             <div
               key={service.id}
               id={`service-card-${service.id}`}
-              className="bg-[#121317] border border-[#22242a] hover:border-[#d4af37]/60 rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/60 group relative overflow-hidden"
+              className="bg-[#121317] border border-[#22242a] hover:border-[#d4af37]/60 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/70 group relative overflow-hidden"
             >
               {/* Subtle top card shimmer on hover */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#d4af37]/0 group-hover:via-[#d4af37]/80 to-transparent transition-all duration-500" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#d4af37]/0 group-hover:via-[#d4af37]/80 to-transparent transition-all duration-500 z-20" />
 
               <div>
-                {/* Header: Icon, Category & Duration */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-[#1a1c22] border border-[#2a2c34] group-hover:border-[#d4af37]/40 flex items-center justify-center text-[#d4af37] transition-colors">
-                    {getServiceIcon(service.iconName)}
-                  </div>
-                  
-                  <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#a0a2aa] bg-[#18191f] px-2.5 py-1 rounded-full border border-[#262830]">
-                    <Clock className="w-3 h-3 text-[#d4af37]" />
-                    {service.duration}
-                  </span>
-                </div>
-
-                {/* Service Title */}
-                <h3 className="text-xl font-serif font-bold text-white mb-3 tracking-wide group-hover:text-[#e8cf89] transition-colors">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-[#a3a5ad] leading-relaxed mb-6 font-light">
-                  {service.description}
-                </p>
-
-                {/* Highlights List */}
-                <div className="space-y-2 mb-6 pt-4 border-t border-[#1e2026]">
-                  {service.highlights.slice(0, 3).map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-[#8e9098]">
-                      <Check className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                {/* Service Image Header */}
+                {service.imageUrl && (
+                  <div className="relative w-full h-44 overflow-hidden bg-[#181920]">
+                    <img
+                      src={service.imageUrl}
+                      alt={`${service.title} at Flying Scissor Faisalabad`}
+                      className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#121317] via-[#121317]/40 to-transparent" />
+                    
+                    {/* Badge Category */}
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="text-[10px] uppercase tracking-widest font-bold text-[#d4af37] bg-[#0c0d0e]/85 backdrop-blur-md px-2.5 py-1 rounded border border-[#d4af37]/30">
+                        {service.category}
+                      </span>
                     </div>
-                  ))}
+
+                    {/* Duration Badge */}
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="inline-flex items-center gap-1 text-[11px] font-medium text-[#e0e2ea] bg-[#0c0d0e]/85 backdrop-blur-md px-2.5 py-1 rounded border border-white/10">
+                        <Clock className="w-3 h-3 text-[#d4af37]" />
+                        {service.duration}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="p-6">
+                  {/* Service Title with Icon */}
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-[#1a1c22] border border-[#2a2c34] group-hover:border-[#d4af37]/50 flex items-center justify-center text-[#d4af37] shrink-0 transition-colors mt-0.5">
+                      {getServiceIcon(service.iconName)}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-serif font-bold text-white tracking-wide group-hover:text-[#e8cf89] transition-colors leading-snug">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm text-[#a3a5ad] leading-relaxed mb-5 font-light">
+                    {service.description}
+                  </p>
+
+                  {/* Highlights List */}
+                  <div className="space-y-2 mb-4 pt-3 border-t border-[#1e2026]">
+                    {service.highlights.slice(0, 3).map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs text-[#8e9098]">
+                        <Check className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Card Footer: Book Service Link */}
-              <div className="pt-4 border-t border-[#1c1d23]">
+              <div className="p-6 pt-0 border-t border-[#1c1d23]">
                 <button
                   onClick={() => onOpenBooking(service.id)}
                   id={`book-service-${service.id}`}

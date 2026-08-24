@@ -6,6 +6,7 @@ export interface ServiceItem {
   description: string;
   highlights: string[];
   iconName: string;
+  imageUrl?: string;
 }
 
 export interface ReviewItem {
