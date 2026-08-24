@@ -1,0 +1,6 @@
+{
+  "name": "Flying Scissor",
+  "description": "Premium hair salon and luxury grooming studio in Faisalabad, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
