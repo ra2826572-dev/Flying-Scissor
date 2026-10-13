@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { 
   Scissors, 
   Sparkles, 
@@ -78,7 +79,7 @@ export default function ServicesSection({ onOpenBooking }: ServicesSectionProps)
                   <div className="relative w-full h-44 overflow-hidden bg-[#181920]">
                     <img
                       src={service.imageUrl}
-                      alt={`${service.title} at Flying Scissor Faisalabad`}
+                      alt={`${service.title} at Flying Scissor & Co Faisalabad`}
                       className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
                       loading="lazy"
                     />
@@ -145,6 +146,18 @@ export default function ServicesSection({ onOpenBooking }: ServicesSectionProps)
 
             </div>
           ))}
+        </div>
+
+        {/* View All Services Link */}
+        <div className="text-center mb-12">
+          <Link
+            to="/services"
+            id="view-all-services-btn"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#16171e] hover:bg-[#20222a] border border-[#2d303b] hover:border-[#d4af37] text-white hover:text-[#d4af37] text-xs uppercase tracking-widest font-semibold transition-all duration-300"
+          >
+            <span>View Full Services &amp; Treatments Menu</span>
+            <ArrowRight className="w-4 h-4 text-[#d4af37]" />
+          </Link>
         </div>
 
         {/* Bottom Booking Banner */}

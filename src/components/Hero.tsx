@@ -15,7 +15,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={SALON_IMAGES.hero}
-          alt="Flying Scissor Luxury Salon Interior in Faisalabad"
+          alt="Flying Scissor & Co Luxury Salon Interior in Faisalabad"
           className="w-full h-full object-cover object-center scale-105 transform animate-in fade-in duration-1000"
           referrerPolicy="no-referrer"
           loading="eager"
@@ -42,9 +42,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         {/* Main Heading */}
         <h1 
           id="hero-main-heading"
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold tracking-[0.14em] text-white leading-tight mb-4 drop-shadow-2xl"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold tracking-[0.12em] text-white leading-tight mb-4 drop-shadow-2xl"
         >
-          FLYING SCISSOR
+          FLYING SCISSOR &amp; CO
         </h1>
 
         {/* Tagline */}

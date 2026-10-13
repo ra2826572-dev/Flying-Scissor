@@ -65,7 +65,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId }: Book
     setIsSubmitted(true);
 
     if (viaWhatsApp) {
-      const message = `*Flying Scissor Appointment Request*%0A` +
+      const message = `*Flying Scissor & Co Appointment Request*%0A` +
         `--------------------------------%0A` +
         `*Name:* ${encodeURIComponent(formData.fullName || 'Guest')}%0A` +
         `*Phone:* ${encodeURIComponent(formData.phone || 'N/A')}%0A` +
@@ -75,7 +75,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId }: Book
         (formData.notes ? `*Notes:* ${encodeURIComponent(formData.notes)}%0A` : '') +
         `*Ref Code:* ${code}%0A` +
         `--------------------------------%0A` +
-        `Please confirm my reservation at Flying Scissor Faisalabad.`;
+        `Please confirm my reservation at Flying Scissor & Co Faisalabad.`;
 
       window.open(`https://wa.me/923245478822?text=${message}`, '_blank');
     }
@@ -113,7 +113,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId }: Book
             <div className="mb-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b1c23] border border-[#d4af37]/30 text-xs text-[#d4af37] font-semibold mb-2">
                 <Scissors className="w-3.5 h-3.5" />
-                <span>Flying Scissor Appointment</span>
+                <span>Flying Scissor &amp; Co Appointment</span>
               </div>
               <h3 className="text-2xl font-serif font-bold text-white">
                 Book Your Salon Visit
@@ -275,7 +275,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId }: Book
             </h3>
 
             <p className="text-sm text-[#a8abb4] mb-6 max-w-md mx-auto">
-              Thank you, <strong className="text-white">{formData.fullName || 'Valued Guest'}</strong>. Your appointment request has been recorded with Flying Scissor Faisalabad.
+              Thank you, <strong className="text-white">{formData.fullName || 'Valued Guest'}</strong>. Your appointment request has been recorded with Flying Scissor &amp; Co Faisalabad.
             </p>
 
             <div className="bg-[#171920] border border-[#292b35] rounded-xl p-5 text-left mb-6 space-y-2.5 text-xs">

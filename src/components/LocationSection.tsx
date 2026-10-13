@@ -1,9 +1,10 @@
-import { MapPin, Phone, Clock, Navigation, Compass, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Clock, Navigation, Compass, ExternalLink, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/salonData';
 
 export default function LocationSection() {
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    'Flying Scissor Basement National Bank West Canal Road Faisalabad Pakistan'
+    'Flying Scissor & Co Basement National Bank West Canal Road Faisalabad Pakistan'
   )}`;
 
   return (
@@ -21,7 +22,7 @@ export default function LocationSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-wide mb-4">
-            Visit Flying Scissor
+            Visit Flying Scissor &amp; Co
           </h2>
 
           <p className="text-base text-[#9fa1a8] font-light">
@@ -95,24 +96,24 @@ export default function LocationSection() {
 
             {/* Action Buttons */}
             <div className="pt-8 mt-8 border-t border-[#1e2028] flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/contact"
+                id="location-full-contact-btn"
+                className="gold-button flex-1 py-3.5 px-4 rounded text-xs uppercase tracking-wider font-bold text-[#0c0d0e] flex items-center justify-center gap-2 text-center"
+              >
+                <span>Full Contact &amp; Inquiry</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#0c0d0e]" />
+              </Link>
+
               <a
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="location-directions-btn"
-                className="gold-button flex-1 py-3.5 px-4 rounded text-xs uppercase tracking-wider font-bold text-[#0c0d0e] flex items-center justify-center gap-2 text-center"
-              >
-                <Navigation className="w-4 h-4 text-[#0c0d0e]" />
-                <span>Get Directions</span>
-              </a>
-
-              <a
-                href={`tel:${BUSINESS_INFO.phoneClean}`}
-                id="location-call-btn"
                 className="flex-1 py-3.5 px-4 rounded text-xs uppercase tracking-wider font-bold text-white bg-[#1a1c22] hover:bg-[#252832] border border-[#2e313c] hover:border-[#d4af37] flex items-center justify-center gap-2 text-center transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#d4af37]" />
-                <span>Call Now</span>
+                <Navigation className="w-4 h-4 text-[#d4af37]" />
+                <span>Get Directions</span>
               </a>
             </div>
 
@@ -124,7 +125,7 @@ export default function LocationSection() {
             {/* Real Interactive Google Maps Embed centered on Faisal Town Canal Road, Faisalabad */}
             <div className="relative w-full h-full min-h-[360px] flex-1">
               <iframe
-                title="Flying Scissor Faisalabad Location Map"
+                title="Flying Scissor &amp; Co Faisalabad Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13621.144410065096!2d73.1250106!3d31.4397394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39226868846c4fa9%3A0xb3caee42e58eb6d3!2sCanal%20Rd%2C%20Faisalabad%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1718000000000!5m2!1sen!2s"
                 className="w-full h-full border-0 absolute inset-0 filter invert-[0.90] hue-rotate-180 contrast-[1.1] opacity-85"
                 allowFullScreen={true}
@@ -139,7 +140,7 @@ export default function LocationSection() {
                     FS
                   </div>
                   <div>
-                    <h4 className="font-serif text-sm font-bold text-white">Flying Scissor</h4>
+                    <h4 className="font-serif text-sm font-bold text-white">Flying Scissor &amp; Co</h4>
                     <p className="text-[11px] text-[#9fa1a8]">West Canal Road, Faisalabad</p>
                   </div>
                 </div>

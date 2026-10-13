@@ -16,13 +16,13 @@ export default function WhyChooseSection() {
           <div className="inline-flex items-center justify-center gap-2 mb-3">
             <span className="w-6 h-[1.5px] bg-[#d4af37]" />
             <span className="text-xs uppercase tracking-[0.25em] text-[#d4af37] font-bold">
-              The Flying Scissor Standard
+              The Flying Scissor &amp; Co Standard
             </span>
             <span className="w-6 h-[1.5px] bg-[#d4af37]" />
           </div>
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-wide mb-4">
-            Why Flying Scissor?
+            Why Flying Scissor &amp; Co?
           </h2>
           
           <p className="text-base text-[#9fa1a8] font-light">

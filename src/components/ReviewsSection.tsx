@@ -1,4 +1,5 @@
-import { Star, CheckCircle, Quote, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Star, CheckCircle, Quote, MessageSquare, ArrowRight } from 'lucide-react';
 import { GENUINE_REVIEWS, BUSINESS_INFO } from '../data/salonData';
 
 interface ReviewsSectionProps {
@@ -112,13 +113,22 @@ export default function ReviewsSection({ onOpenBooking }: ReviewsSectionProps) {
         </div>
 
         {/* Section Bottom CTA */}
-        <div className="text-center">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-center">
+          <Link
+            to="/reviews"
+            id="view-all-reviews-btn"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#16171e] hover:bg-[#20222a] border border-[#2d303b] hover:border-[#d4af37] text-white hover:text-[#d4af37] text-xs uppercase tracking-widest font-semibold transition-all duration-300"
+          >
+            <span>View All Client Reviews &amp; Ratings</span>
+            <ArrowRight className="w-4 h-4 text-[#d4af37]" />
+          </Link>
+
           <button
             onClick={onOpenBooking}
             id="reviews-cta-btn"
-            className="gold-button px-8 py-4 rounded text-xs uppercase tracking-[0.2em] font-bold text-[#0c0d0e] shadow-xl hover:shadow-2xl cursor-pointer"
+            className="gold-button px-8 py-4 rounded-full text-xs uppercase tracking-[0.2em] font-bold text-[#0c0d0e] shadow-xl hover:shadow-2xl cursor-pointer"
           >
-            Visit Us & Experience Flying Scissor
+            Book Your Appointment
           </button>
         </div>
 

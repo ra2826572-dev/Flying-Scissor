@@ -14,7 +14,7 @@ export default function FloatingActions() {
         rel="noopener noreferrer"
         id="floating-whatsapp-btn"
         className="flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl hover:shadow-emerald-900/50 hover:scale-105 transition-all duration-300 group"
-        aria-label="Chat on WhatsApp with Flying Scissor"
+        aria-label="Chat on WhatsApp with Flying Scissor & Co"
       >
         <MessageCircle className="w-5 h-5 fill-white text-[#25D366]" />
         <span className="text-xs font-bold tracking-wide hidden sm:inline-block">
@@ -27,7 +27,7 @@ export default function FloatingActions() {
         href={`tel:${BUSINESS_INFO.phoneClean}`}
         id="floating-call-btn"
         className="sm:hidden flex items-center justify-center w-12 h-12 rounded-full bg-[#d4af37] text-[#0c0d0e] shadow-2xl hover:scale-105 transition-all duration-300"
-        aria-label="Call Flying Scissor directly"
+        aria-label="Call Flying Scissor & Co directly"
       >
         <Phone className="w-5 h-5" />
       </a>

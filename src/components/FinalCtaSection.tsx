@@ -12,7 +12,7 @@ export default function FinalCtaSection({ onOpenBooking }: FinalCtaProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={SALON_IMAGES.receptionLounge}
-          alt="Flying Scissor Luxury Salon Experience in Faisalabad"
+          alt="Flying Scissor & Co Luxury Salon Experience in Faisalabad"
           className="w-full h-full object-cover object-center scale-105"
           referrerPolicy="no-referrer"
           loading="lazy"
@@ -42,7 +42,7 @@ export default function FinalCtaSection({ onOpenBooking }: FinalCtaProps) {
 
         {/* Text */}
         <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#cbccd2] font-light leading-relaxed mb-10">
-          Step into Flying Scissor and experience professional styling in a premium environment.
+          Step into Flying Scissor &amp; Co and experience professional styling in a premium environment.
         </p>
 
         {/* Buttons */}

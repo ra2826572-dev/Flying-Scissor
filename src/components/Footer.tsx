@@ -1,4 +1,5 @@
-import { MapPin, Phone, Clock, Instagram, Facebook, ArrowUp, Scissors } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Clock, Instagram, ArrowUp, Scissors } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/salonData';
 
 export default function Footer() {
@@ -9,18 +10,14 @@ export default function Footer() {
     });
   };
 
-  const scrollToSection = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) {
-      const headerOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Reviews', path: '/reviews' },
+    { name: 'Contact', path: '/contact' },
+  ];
 
   return (
     <footer className="bg-[#08090b] text-[#a0a2aa] border-t border-[#1c1d24] relative">
@@ -31,19 +28,19 @@ export default function Footer() {
           
           {/* Brand Info (4 cols) */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="inline-flex items-center gap-2 mb-4 group">
               <Scissors className="w-5 h-5 text-[#d4af37]" />
-              <span className="font-serif text-2xl font-bold tracking-[0.16em] text-white">
-                FLYING SCISSOR
+              <span className="font-serif text-2xl font-bold tracking-[0.14em] text-white group-hover:text-[#d4af37] transition-colors">
+                FLYING SCISSOR &amp; CO
               </span>
-            </div>
+            </Link>
             
             <p className="text-sm text-[#95979f] font-light leading-relaxed mb-6 max-w-sm">
-              Professional hair styling and grooming in Faisalabad.
+              Precision hair styling, grooming, and luxury salon experience in Faisalabad.
             </p>
 
             <div className="p-4 rounded-xl bg-[#111216] border border-[#20222a] text-xs text-[#8f919a] space-y-1.5">
-              <div className="text-white font-medium">Flying Scissor Hair Salon</div>
+              <div className="text-white font-medium">Flying Scissor &amp; Co Hair Salon</div>
               <div>Basement National Bank, West Canal Road, Faisalabad</div>
             </div>
           </div>
@@ -54,15 +51,15 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3 text-sm">
-              {['Home', 'About', 'Services', 'Gallery', 'Reviews', 'Contact'].map((item) => (
-                <li key={item}>
-                  <button
-                    onClick={() => scrollToSection(`#${item.toLowerCase()}`)}
-                    id={`footer-link-${item.toLowerCase()}`}
-                    className="hover:text-[#d4af37] transition-colors text-[#999ba2]"
+              {navLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    id={`footer-link-${item.name.toLowerCase()}`}
+                    className="hover:text-[#d4af37] transition-colors text-[#999ba2] block"
                   >
-                    {item}
-                  </button>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,8 +97,8 @@ export default function Footer() {
             <div className="flex items-start gap-2.5 text-sm mb-6">
               <Clock className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
               <div>
-                <p className="text-white font-medium">Daily</p>
-                <p className="text-xs text-[#d4af37]">{BUSINESS_INFO.openingHours}</p>
+                <p className="text-white font-medium">Monday to Sunday (Daily)</p>
+                <p className="text-xs text-[#d4af37] font-semibold">{BUSINESS_INFO.openingHours}</p>
               </div>
             </div>
 
@@ -114,21 +111,11 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="footer-instagram-btn"
-                className="w-10 h-10 rounded-lg bg-[#14151b] border border-[#242630] hover:border-[#d4af37] hover:text-[#d4af37] flex items-center justify-center text-white transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#14151b] border border-[#242630] hover:border-[#d4af37] hover:text-[#d4af37] text-white transition-colors text-xs font-medium"
                 title="Instagram: @flying_scissorofficial"
               >
-                <Instagram className="w-4 h-4" />
-              </a>
-
-              <a
-                href={BUSINESS_INFO.social.facebook.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                id="footer-facebook-btn"
-                className="w-10 h-10 rounded-lg bg-[#14151b] border border-[#242630] hover:border-[#d4af37] hover:text-[#d4af37] flex items-center justify-center text-white transition-colors"
-                title="Facebook: Flying Scissors | Faisalabad"
-              >
-                <Facebook className="w-4 h-4" />
+                <Instagram className="w-4 h-4 text-[#d4af37]" />
+                <span>Instagram</span>
               </a>
             </div>
           </div>
@@ -137,13 +124,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6e7078]">
-          <p>© 2026 Flying Scissor. All Rights Reserved.</p>
+          <p>© 2026 Flying Scissor &amp; Co. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Faisalabad, Pakistan</span>
+            <span>West Canal Road, Faisalabad, Pakistan</span>
             <button
               onClick={scrollToTop}
               id="footer-scroll-top-btn"
-              className="flex items-center gap-1.5 text-[#9a9ba3] hover:text-[#d4af37] transition-colors"
+              className="flex items-center gap-1.5 text-[#9a9ba3] hover:text-[#d4af37] transition-colors cursor-pointer"
             >
               <span>Back to Top</span>
               <ArrowUp className="w-3.5 h-3.5" />

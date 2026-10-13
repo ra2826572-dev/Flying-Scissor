@@ -1,4 +1,5 @@
-import { Sparkles, Shield, Scissors, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Sparkles, Shield, Scissors, CheckCircle2, ArrowRight } from 'lucide-react';
 import { SALON_IMAGES, BUSINESS_INFO } from '../data/salonData';
 
 interface AboutSectionProps {
@@ -37,7 +38,7 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
             <div className="relative rounded-2xl overflow-hidden border border-[#2d2f36] shadow-2xl group">
               <img
                 src={SALON_IMAGES.about}
-                alt="Flying Scissor Salon Interior Lounge & Stations"
+                alt="Flying Scissor & Co Salon Interior Lounge & Stations"
                 className="w-full h-[380px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -70,7 +71,7 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
             <div className="inline-flex items-center gap-2 mb-3">
               <span className="w-8 h-[1.5px] bg-[#d4af37]" />
               <span className="text-xs uppercase tracking-[0.2em] text-[#d4af37] font-bold">
-                About Flying Scissor
+                About Flying Scissor &amp; Co
               </span>
             </div>
 
@@ -79,7 +80,7 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
             </h2>
 
             <p className="text-base sm:text-lg text-[#bbbcc0] leading-relaxed font-light mb-8">
-              Flying Scissor brings professional hair styling and grooming to Faisalabad with a focus on precision, quality, comfort, and personal style. Our modern salon environment is designed to give every client a premium experience from the moment they walk through the door.
+              Flying Scissor &amp; Co brings professional hair styling and grooming to Faisalabad with a focus on precision, quality, comfort, and personal style. Our modern salon environment is designed to give every client a premium experience from the moment they walk through the door.
             </p>
 
             {/* Three Feature Cards */}
@@ -108,20 +109,21 @@ export default function AboutSection({ onOpenBooking }: AboutSectionProps) {
 
             {/* About Actions */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/about"
+                id="about-story-btn"
+                className="gold-button px-6 py-3 rounded text-xs uppercase tracking-widest font-bold text-[#0c0d0e] inline-flex items-center gap-2 cursor-pointer"
+              >
+                <span>Read Full Story</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
               <button
                 onClick={onOpenBooking}
                 id="about-book-btn"
-                className="gold-button px-6 py-3 rounded text-xs uppercase tracking-widest font-bold text-[#0c0d0e] cursor-pointer"
+                className="px-6 py-3 rounded text-xs uppercase tracking-widest font-semibold text-[#d4d4d4] hover:text-white border border-[#2e3038] hover:border-[#d4af37] transition-colors cursor-pointer"
               >
-                Experience the Salon
+                Book Appointment
               </button>
-              <a
-                href={`tel:${BUSINESS_INFO.phoneClean}`}
-                id="about-call-btn"
-                className="px-6 py-3 rounded text-xs uppercase tracking-widest font-semibold text-[#d4d4d4] hover:text-white border border-[#2e3038] hover:border-[#d4af37] transition-colors"
-              >
-                Inquire via Phone
-              </a>
             </div>
 
           </div>

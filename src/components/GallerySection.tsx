@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, ZoomIn, Eye, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { X, ChevronLeft, ChevronRight, ZoomIn, Eye, Sparkles, ArrowRight } from 'lucide-react';
 import { GALLERY_ITEMS } from '../data/salonData';
 import { GalleryItem } from '../types';
 
@@ -63,7 +64,7 @@ export default function GallerySection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-wide mb-4">
-            Step Inside Flying Scissor
+            Step Inside Flying Scissor &amp; Co
           </h2>
 
           <p className="text-base sm:text-lg text-[#a3a5ad] font-light">
@@ -133,6 +134,18 @@ export default function GallerySection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Explore Full Portfolio Link */}
+        <div className="text-center mt-12">
+          <Link
+            to="/gallery"
+            id="view-all-gallery-btn"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#16171e] hover:bg-[#20222a] border border-[#2d303b] hover:border-[#d4af37] text-white hover:text-[#d4af37] text-xs uppercase tracking-widest font-semibold transition-all duration-300"
+          >
+            <span>Explore Complete Gallery &amp; Portfolio</span>
+            <ArrowRight className="w-4 h-4 text-[#d4af37]" />
+          </Link>
         </div>
 
       </div>

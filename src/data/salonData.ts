@@ -10,7 +10,7 @@ import beardShaveImg from '../assets/images/salon_beard_shave_1787565380064.jpg'
 import hairColorImg from '../assets/images/salon_hair_color_1787565396135.jpg';
 
 export const BUSINESS_INFO = {
-  name: 'Flying Scissor',
+  name: 'Flying Scissor & Co',
   tagline: 'Where Style Meets Precision',
   category: 'Premium Hair Salon',
   description: 'Experience premium hair styling, grooming, and beauty services in an elegant environment designed for your comfort.',
@@ -18,7 +18,7 @@ export const BUSINESS_INFO = {
   phone: '+92 324 5478822',
   phoneClean: '+923245478822',
   phoneDisplay: '+92 324 5478822',
-  whatsappUrl: 'https://wa.me/923245478822?text=Hello%20Flying%20Scissor%2C%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment.',
+  whatsappUrl: 'https://wa.me/923245478822?text=Hello%20Flying%20Scissor%20%26%20Co%2C%20I%20would%20like%20to%20inquire%20about%20booking%20an%20appointment.',
   openingHours: 'Daily 10:00 AM – 10:00 PM',
   hoursDetail: {
     weekdays: '10:00 AM – 10:00 PM',
@@ -35,10 +35,6 @@ export const BUSINESS_INFO = {
     instagram: {
       handle: '@flying_scissorofficial',
       url: 'https://www.instagram.com/flying_scissorofficial'
-    },
-    facebook: {
-      name: 'Flying Scissors | Faisalabad',
-      url: 'https://www.facebook.com/FlyingScissorsFaisalabad'
     }
   },
   landmarks: 'Opposite Raza Garden, Basement National Bank, Main Canal Expressway'
